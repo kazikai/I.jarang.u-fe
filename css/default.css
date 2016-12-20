@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* HTML reset */
+html,
+body{min-height: 100%;}
+body{
+    word-break: keep-all;
+    min-width: 320px;
+    background-image: linear-gradient(135deg, rgba(46,204,64,.5), rgba(0,0,0,0) 60px),
+                      linear-gradient(315deg, rgba(46,204,64,.3), rgba(0,0,0,0) 40px);
+}
+header>.h3{
+    display: inline-block;
+    line-height: 32px !important;
+    background: url(../img/hacking.price.black.png) no-repeat 0 center;
+    background-size: 32px;
+    padding-left: 40px;
+    margin-right: 4px;
+}
+header>.h3>b{
+    color: #FF4136;
+    position: relative;
+    display: inline-block;
+    bottom: .5em;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+sup,
+small{color: #767676;}
+footer{
+    text-align: center;
+    color: #959595;
+}
+a{text-decoration: underline;}
+p{margin: 1em 0;}
+mark{font-weight: 700;}
+
+/* Bootstrap reset */
+.container{max-width: 750px;}
+.panel-body>:first-child{margin-top: 0;}
+.panel-body>:last-child{margin-bottom: 0;}
+.btn{text-decoration: none;}
+.text-center>.btn:only-child{width: 290px;}
+[class^="bg-"]{padding: 15px;}
+.btn[href^="tg://"]::before{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    background-image: url(https://telegram.org/img/t_logo.png);
+    background-repeat: no-repeat;
+    background-size: 24px;
+    margin-right: 8px;
+}
+.price{
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    color: #23b300;
+    font-size: 4rem;
+}
