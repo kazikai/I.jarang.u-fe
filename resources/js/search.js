@@ -96,9 +96,24 @@
                 alert( "실패" );
             } );
         }
+        function subscribe(){
+            var param = {
+                id: $scope.id,
+                keyword: $scope.keyword,
+                except: $scope.except,
+                price: $scope.price
+            };
+            $http.get( "http://139.162.71.151:3000/subscribe?" + $httpParamSerializer( param ) ).then( function( res ) {
+                alert( res.data );
+            }, function( res ) {
+                alert( res );
+            } );
+            return false;
+        }
 
         $scope.result = false;
         $scope.search = search;
+        $scope.subscribe = subscribe;
 
 
 
