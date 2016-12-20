@@ -36,9 +36,17 @@ footer{
 a{text-decoration: underline;}
 p{margin: 1em 0;}
 mark{font-weight: 700;}
+label{margin: 0;}
+input[type=radio]{
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    vertical-align: middle;
+}
 
 /* Bootstrap reset */
 .container{max-width: 750px;}
+.h5{font-weight: 700;}
 .panel-body>:first-child{margin-top: 0;}
 .panel-body>:last-child{margin-bottom: 0;}
 .btn{text-decoration: none;}
@@ -55,6 +63,20 @@ mark{font-weight: 700;}
     background-size: 24px;
     margin-right: 8px;
 }
+.list-group-item{padding: 0;}
+.list-group-item>label:only-child{
+    position: relative;
+    display: block;
+    padding: 10px 15px 10px 38px;
+    font-weight: 400;
+}
+.list-group-item>label>input[type=radio]{
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+
+/* customized css */
 .price{
     display: block;
     margin: 10px 0;
