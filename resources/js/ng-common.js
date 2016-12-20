@@ -5,4 +5,5 @@
         $interpolateProvider.startSymbol( "{[{" );
         $interpolateProvider.endSymbol( "}]}" );
     } );
+
 } ( jQuery, window ) );

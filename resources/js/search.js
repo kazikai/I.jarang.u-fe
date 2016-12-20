@@ -1,9 +1,20 @@
 ( function( $, window, undefined ) {
 
-
+    function parseQuery(qs) {
+        qs = qs || location.search;
+        var result = {},
+            keyValuePairs = qs.slice(1).split("&");
+            for (var i = 0, l = keyValuePairs.length; i < l; i++) {
+                var keyValuePair = keyValuePairs[i].split("=");
+                if (keyValuePair[0] !== "" && !!keyValuePair[1]) {
+                    result[keyValuePair[0]] = decodeURIComponent(keyValuePair[1]) || "";
+                }
+        }
+        return result;
+    }
 
     angular.module( "iju" ).controller( "ijuCtrl", [ "$scope", "$http", "$httpParamSerializer", function( $scope, $http, $httpParamSerializer ) {
-
+        var qs = parseQuery();
         function makeQuery( modelList ){
             var queryStringArray = [];
             if ( !Array.isArray( modelList ) ) {
@@ -32,6 +43,9 @@
             }
             param.query = makeQuery( [ "maker", "model", "version", "option" ] );
             $scope.loading = true;
+            $scope.id = qs.id ? qs.id: null;
+            $scope.keyword = param.query;
+
             $http.get( 'http://139.162.71.151:3000/api/search/shop?' + $httpParamSerializer( param )  ).then( function( res ) {
                 console.log( res.data );
                 $scope.loading = false;
