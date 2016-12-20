@@ -14,9 +14,9 @@ jsfile:
         <form action="" method="" class="form-group">
             <label for="search">상품 최저가 검색</label> <sup>from NAVER 쇼핑</sup>
             <div class="input-group">
-                <input type="search" name="" id="search" class="form-control input-lg" required placeholder="Apple iPhone 7 128GB">
+                <input type="search" name="" id="search" ng-model="searchWord" class="form-control input-lg" required placeholder="Apple iPhone 7 128GB">
                 <span class="input-group-btn">
-                    <button class="btn btn-success btn-lg">검색</button>
+                    <button class="btn btn-success btn-lg" ng-click="search()">검색</button>
                 </span>
             </div>
             <p>검색 결과를 최적화하기 위해 최소한 <strong>2개 이상의 키워드</strong>를 띄어쓰기로 입력해 주세요.<br>예) Apple iPhone 7 128GB</p>
