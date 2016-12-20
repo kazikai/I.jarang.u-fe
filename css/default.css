@@ -112,10 +112,7 @@ input[type=radio]{
     left: 0;
     right: 0;
 }
-#loader{
-    text-align: center;
-    line-height: 100vh;
-}
+#loader{font-size: 0;}
 #loader:target{display: block;}
 #loader::before,
 #loader::after{content: "";}
