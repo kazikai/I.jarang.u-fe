@@ -78,8 +78,8 @@ input[type=radio]{
     border: 1px solid #999;
     margin-top: -15px;
 }
-#min-price[type=range]::-webkit-slider-thumb{box-shadow: -623px 0 0 600px #ddd;}
-#max-price[type=range]::-webkit-slider-thumb{box-shadow: 623px 0 0 600px #ddd;}
+#min-price[type=range]::-webkit-slider-thumb{box-shadow: 623px 0 0 600px #ddd;}
+#max-price[type=range]::-webkit-slider-thumb{box-shadow: -623px 0 0 600px #ddd;}
 [type=range]::-webkit-slider-runnable-track{
     background: #ddd;
     height: 16px;
