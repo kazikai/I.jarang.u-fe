@@ -19,16 +19,22 @@ jsfile:
                     <button class="btn btn-success btn-lg">검색</button>
                 </span>
             </div>
+            <p>검색 결과를 최적화하기 위해 최소한 <strong>2개 이상의 키워드</strong>를 띄어쓰기로 입력해 주세요.<br>예) Apple iPhone 7 128GB</p>
         </form>
-        <div id="search-result" hidden>
-            <p><mark>샤오미 EUNi</mark> 상품의 현재 최저가는 <strong class="price">369,009원</strong> 입니다.</p>
+        <section id="search-result">
+            <h2 class="sr-only">최저가 검색 결과</h2>
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p><mark>샤오미 EUNi</mark> 상품의 현재 최저가는 <strong class="price">369,009원</strong> 입니다.</p>
+                </div>
+            </div>
             <p>※ <small>해외직구 상품은 24시간 이내 환율에 따라 원화 가격으로 표시합니다.</small></p>
             <hr>
             <p><mark>샤오미 EUNi</mark> 상품의 최저 가격이 갱신될 때마다 텔레그램으로 구독하시겠습니까?</p>
             <div class="text-center">
                 <a href="tg://resolve?domain=hackingprice_bot" class="btn btn-primary btn-lg">예. 구독하겠습니다.</a>
             </div>
-        </div>
+        </section>
     </main>
     <hr>
     <footer>
