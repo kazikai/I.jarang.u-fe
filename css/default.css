@@ -27,8 +27,10 @@ header>.h3>b{
     -ms-transform: rotate(180deg);
     transform: rotate(180deg);
 }
+section{margin: 2em 0;}
 sup,
 small{color: #767676;}
+sup{font-weight: 400;}
 footer{
     text-align: center;
     color: #959595;
@@ -47,7 +49,7 @@ input[type=radio]{
 
 /* Bootstrap reset */
 .container{max-width: 750px;}
-.h5{font-weight: 700;}
+.h4{font-weight: 700;}
 .panel-body>:first-child{margin-top: 0;}
 .panel-body>:last-child{margin-bottom: 0;}
 .btn{text-decoration: none;}

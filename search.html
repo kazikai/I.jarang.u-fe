@@ -17,18 +17,44 @@
         </header>
         <hr>
         <main>
-            <form action="" method="" class="form-group">
-                <label for="search">상품 최저가 검색</label> <sup>from NAVER 쇼핑</sup>
-                <div class="input-group">
-                    <input type="search" name="" id="search" class="form-control input-lg" required placeholder="Apple iPhone 7 128GB">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success btn-lg">검색</button>
-                    </span>
+            <form action="" method="" class="form-horizontal">
+                <h2 class="h4">상품 최저가 검색 <sup>from NAVER 쇼핑</sup></h2>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="maker">제조사</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="maker" class="form-control input-lg" placeholder="Apple" required>
+                    </div>
                 </div>
-                <p>검색 결과를 최적화하기 위해 최소한 <strong>2개 이상의 키워드</strong>를 띄어쓰기로 입력해 주세요.</p>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="product">제품명</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="product" class="form-control input-lg" placeholder="iPhone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="version">버전</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="version" class="form-control input-lg" placeholder="6 7">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="option">옵션</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="option" class="form-control input-lg" placeholder="64GB 128GB">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="not">제외 키워드</label>
+                    <div class="col-sm-10">
+                        <input type="text" id="not" class="form-control input-lg" placeholder="accessory adaptor">
+                    </div>
+                </div>
+                <span class="text-center">
+                    <button class="btn btn-success btn-lg">검색</button>
+                </span>
             </form>
-            <section id="category-list">
-                <h2 class="h5">카테고리 선택</h2>
+            <section id="category-list" hidden>
+                <h2 class="h4">카테고리 선택</h2>
                 <ul class="list-group">
                     <li class="list-group-item"><label><input type="radio" name="category"> 스포츠/레저 &gt; 스케이트/보드/롤러 &gt; 킥보드</label></li>
                     <li class="list-group-item"><label><input type="radio" name="category"> 패션의류 &gt; 여성의류 &gt; 코트</label></li>
@@ -36,15 +62,15 @@
                 </ul>
             </section>
             <section id="search-result">
-                <h2 class="h5">최저가 확인</h2>
+                <h2 class="h4">최저가 확인</h2>
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <p>귀하가 선택한 카테고리에서 <mark>샤오미 EUNi</mark> 상품의 현재 최저가는 <strong class="price">369,009원</strong> 입니다.</p>
+                        <p><del hidden>귀하가 선택한 카테고리에서</del> <mark>샤오미 EUNi</mark> 상품의 현재 최저가는 <strong class="price">369,009원</strong> 입니다.</p>
                     </div>
                 </div>
                 <p>※ <small>해외직구 상품은 24시간 이내 환율에 따라 원화 가격으로 표시합니다.</small></p>
                 <hr>
-                <p><mark>스포츠/레저 &gt; 스케이트/보드/롤러 &gt; 킥보드</mark> 카테고리에서 <mark>샤오미 EUNi</mark> 상품의 최저 가격이 갱신될 때마다 텔레그램으로 구독하시겠습니까?</p>
+                <p><del hidden><mark>스포츠/레저 &gt; 스케이트/보드/롤러 &gt; 킥보드</mark> 카테고리에서</del> <mark>샤오미 EUNi</mark> 상품의 최저 가격이 갱신될 때마다 텔레그램으로 구독하시겠습니까?</p>
                 <div class="text-center">
                     <a href="tg://resolve?domain=hackingprice_bot" class="btn btn-primary btn-lg">예. 구독하겠습니다.</a>
                 </div>
