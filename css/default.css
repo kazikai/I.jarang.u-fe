@@ -93,6 +93,18 @@ input[type=radio]{
     left: 10px;
     top: 8px;
 }
+.media{
+    display: block;
+    clear: both;
+    margin: 0;
+    padding-top: 10px;
+    color: #333;
+}
+.media img{
+    width: 64px;
+    height: 64px;
+}
+.media p{line-height: 1.6rem;}
 
 /* customized css */
 .range{position: relative;}

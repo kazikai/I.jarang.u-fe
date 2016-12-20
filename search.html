@@ -52,16 +52,23 @@
                 <div class="form-group range">
                     <label class="control-label col-sm-2" for="min-price">최저 가격 제한</label>
                     <div class="col-sm-10">
-                        <input type="range" id="min-price" class="input-lg" min="1000" max="10000000" step="1000" value="1000">
+                        <input type="range" id="min-price" name="min-price" class="input-lg min-max-slider" min="1000" max="10000000" step="1000" value="1000">
                     </div>
                     <output for="min-price">&#8361; 1,000</output>
                 </div>
                 <div class="form-group range">
                     <label class="control-label col-sm-2" for="max-price">최대 가격 제한</label>
                     <div class="col-sm-10">
-                        <input type="range" id="max-price" class="input-lg" min="1000" max="10000000" step="1000" value="10000000">
+                        <input type="range" id="max-price" name="max-price" class="input-lg min-max-slider" min="1000" max="10000000" step="1000" value="10000000">
                     </div>
                     <output for="max-price">&#8361; 10,000,000</output>
+                </div>
+                <div class="form-group range">
+                    <label class="control-label col-sm-2" for="price-position">가격 범위 제한</label>
+                    <div class="col-sm-10">
+                        <input type="range" id="price-position" name="price-position" class="input-lg position-slider" min="500000" max="9500000" step="10000" value="500000">
+                    </div>
+                    <output for="price-position">&#8361; 0 ~ 1,000,000</output>
                 </div>
                 <span class="text-center">
                     <button class="btn btn-success btn-lg">검색</button>
@@ -79,8 +86,24 @@
                 <h2 class="h4">가격 확인</h2>
                 <p><mark>Apple iPhone 7 128GB</mark> 상품 <mark>9,999</mark>개의 가격은</p>
                 <ul class="list-group price">
-                    <li class="list-group-item row"><b class="col-sm-2">최고</b> <strong class="col-sm-10">&#8361; 9,999,999</strong></li>
-                    <li class="list-group-item row"><b class="col-sm-2">최저</b> <strong class="col-sm-10">&#8361; 1,000,000</strong></li>
+                    <li class="list-group-item row">
+                        <b class="col-sm-2">최고</b> <strong class="col-sm-10">&#8361; 9,999,999</strong>
+                        <a href="#" target="_blank" class="media">
+                            <div class="media-left">
+                                <img alt class="media-object" src="">
+                            </div>
+                            <p class="media-body">샤오미 EUNi 전동킥보드 ★관부가세 포함 / 무료배송★ EUNi ES808 / 치사이클 / 최신출시 / 초경량 전동 스쿠터 / LG Panasonic 배터리 / 화이트 / 5.2</p>
+                        </a>
+                    </li>
+                    <li class="list-group-item row">
+                        <b class="col-sm-2">최저</b> <strong class="col-sm-10">&#8361; 1,000,000</strong>
+                        <a href="#" target="_blank" class="media">
+                            <div class="media-left">
+                                <img alt class="media-object" src="">
+                            </div>
+                            <p class="media-body">샤오미 EUNi 전동킥보드 ★관부가세 포함 / 무료배송★ EUNi ES808 / 치사이클 / 최신출시 / 초경량 전동 스쿠터 / LG Panasonic 배터리 / 화이트 / 5.2</p>
+                        </a>
+                    </li>
                 </ul>
                 <p>입니다.</p>
                 <p>※ <small>해외직구 상품은 24시간 이내 환율에 따라 원화 가격으로 표시합니다.</small></p>
@@ -101,9 +124,16 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script>
         jQuery(function($){
-            $("input[type=range]").on("input", function(){
+            $(".min-max-slider").on("input", function(){
                 var $this = $(this);
                 $this.parent().next("output").text( "₩ " + $this.val().toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") );
+            });
+            $(".position-slider").on("input", function(){
+                var $this = $(this),
+                    value = parseInt($this.val()),
+                    minVal = (value - 500000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
+                    maxVal = (value + 500000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                $this.parent().next("output").text( "₩ " + minVal + " ~ " + maxVal );
             });
         });
     </script>
