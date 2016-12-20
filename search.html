@@ -62,15 +62,16 @@
                 </ul>
             </section>
             <section id="search-result">
-                <h2 class="h4">최저가 확인</h2>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <p><del hidden>귀하가 선택한 카테고리에서</del> <mark>샤오미 EUNi</mark> 상품의 현재 최저가는 <strong class="price">369,009원</strong> 입니다.</p>
-                    </div>
-                </div>
+                <h2 class="h4">가격 확인</h2>
+                <p><mark>Apple iPhone 7 128GB</mark> 상품 <mark>9,999</mark>개의 가격은</p>
+                <ul class="list-group price">
+                    <li class="list-group-item row"><b class="col-sm-2">최고</b> <strong class="col-sm-10">&#8361; 9,999,999</strong></li>
+                    <li class="list-group-item row"><b class="col-sm-2">최저</b> <strong class="col-sm-10">&#8361; 1,000,000</strong></li>
+                </ul>
+                <p>입니다.</p>
                 <p>※ <small>해외직구 상품은 24시간 이내 환율에 따라 원화 가격으로 표시합니다.</small></p>
                 <hr>
-                <p><del hidden><mark>스포츠/레저 &gt; 스케이트/보드/롤러 &gt; 킥보드</mark> 카테고리에서</del> <mark>샤오미 EUNi</mark> 상품의 최저 가격이 갱신될 때마다 텔레그램으로 구독하시겠습니까?</p>
+                <p><mark>샤오미 EUNi</mark> 상품의 <strong>최저 가격</strong>이 갱신될 때마다 텔레그램으로 구독하시겠습니까?</p>
                 <div class="text-center">
                     <a href="tg://resolve?domain=hackingprice_bot" class="btn btn-primary btn-lg">예. 구독하겠습니다.</a>
                 </div>
@@ -83,15 +84,5 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script>
-        // Demo script
-        jQuery(function($){
-            $(document).on("click", ".btn-success", function( e ){
-                e.preventDefault();
-                alert("입력하신 키워드가 너무 다양한 검색 결과를 포함하고 있습니다.\n검색 결과를 좁히기 위해 구체적인 상품 이름을 입력해 주세요.\n예)\n스마트폰(X),\nApple iPhone 7 128GB(O)");
-                $("#search-result").show();
-            });
-        });
-    </script>
 </body>
 </html>
