@@ -1,0 +1,19 @@
+<!-- build:css resources/css/style.timestamp.min.css -->
+<link rel="stylesheet" href="../components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../resources/css/default.css">
+<!-- endbuild -->
+{{#if dev}}
+{{#each cssfile}}
+<link rel="stylesheet" href="../resources/css/{{.}}.css">
+{{/each}}
+{{else}}
+{{#each cssfile}}
+<link rel="stylesheet" href="resources/css/{{.}}.timestamp.min.css">
+{{/each}}
+{{/if}}
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+---
+title: Hacking price - 최저가 알리미
+layout: layouts/default.hbs
+jsfile:
+- search
+---
+<div class="container">
+    <header>
+        <h1 class="h3">Hack<b>i</b>ng price</h1>
+        <sup>최저가 알리미</sup>
+    </header>
+    <hr>
+    <main>
+        <form action="" method="" class="form-group">
+            <label for="search">상품 최저가 검색</label> <sup>from NAVER 쇼핑</sup>
+            <div class="input-group">
+                <input type="search" name="" id="search" class="form-control input-lg" required placeholder="Apple iPhone 7 128GB">
+                <span class="input-group-btn">
+                    <button class="btn btn-success btn-lg">검색</button>
+                </span>
+            </div>
+        </form>
+        <div id="search-result" hidden>
+            <p><mark>샤오미 EUNi</mark> 상품의 현재 최저가는 <strong class="price">369,009원</strong> 입니다.</p>
+            <p>※ <small>해외직구 상품은 24시간 이내 환율에 따라 원화 가격으로 표시합니다.</small></p>
+            <hr>
+            <p><mark>샤오미 EUNi</mark> 상품의 최저 가격이 갱신될 때마다 텔레그램으로 구독하시겠습니까?</p>
+            <div class="text-center">
+                <a href="tg://resolve?domain=hackingprice_bot" class="btn btn-primary btn-lg">예. 구독하겠습니다.</a>
+            </div>
+        </div>
+    </main>
+    <hr>
+    <footer>
+        <p>i.jarang.u</p>
+    </footer>
+</div>
