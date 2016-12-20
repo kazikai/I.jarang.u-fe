@@ -104,9 +104,9 @@
                 price: $scope.price
             };
             $http.get( "http://139.162.71.151:3000/subscribe?" + $httpParamSerializer( param ) ).then( function( res ) {
-                alert( res.data );
+                alert( "등록 성공" );
             }, function( res ) {
-                alert( res );
+                alert( "등록 실패" );
             } );
             return false;
         }
