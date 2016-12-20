@@ -62,6 +62,10 @@ input[type=radio]{
 .panel-body>:last-child{margin-bottom: 0;}
 .btn{text-decoration: none;}
 .text-center>.btn:only-child{width: 100%;}
+[type=range]{
+    padding-left: 0;
+    padding-right: 0;
+}
 [class^="bg-"]{padding: 15px;}
 .btn[href^="tg://"]::before{
     content: "";
@@ -91,6 +95,13 @@ input[type=radio]{
 }
 
 /* customized css */
+.range{position: relative;}
+.range>output{
+    position: absolute;
+    top: 0;
+    right: 15px;
+    padding: 0;
+}
 .price>li{line-height: 4rem;}
 .price b{
     float: left;
