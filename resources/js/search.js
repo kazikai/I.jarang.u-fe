@@ -13,7 +13,7 @@
         return result;
     }
 
-    angular.module( "iju" ).controller( "ijuCtrl", [ "$scope", "$http", "$httpParamSerializer", function( $scope, $http, $httpParamSerializer ) {
+    angular.module( "iju" ).controller( "ijuCtrl", [ "$scope", "$http", "$httpParamSerializer", "comma", function( $scope, $http, $httpParamSerializer, comma ) {
         var qs = parseQuery();
         function makeQuery( modelList ){
             var queryStringArray = [];
@@ -69,6 +69,7 @@
                 var highPrice = {
                     lprice: 0
                 };
+
                 filterList.forEach( function( v ) {
                     if( !lowPrice.lprice || v.lprice && ( v.lprice < lowPrice.lprice ) ) {
                         lowPrice = v;
@@ -77,10 +78,12 @@
                         highPrice = v;
                     }
                 } );
+
                 $scope.filterList = filterList;
                 $scope.filterCount = filterList.length;
-                $scope.highPrice = highPrice.lprice;
-                $scope.lowPrice = lowPrice.lprice;
+                $scope.highPrice = comma.get( highPrice.lprice );
+                $scope.lowPrice = comma.get( lowPrice.lprice );
+                $scope.price = lowPrice.lprice;
                 $scope.result = true;
             }, function( res ) {
                 alert( "실패" );
