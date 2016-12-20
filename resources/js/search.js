@@ -31,16 +31,49 @@
                 return;
             }
             param.query = makeQuery( [ "maker", "model", "version", "option" ] );
-
+            $scope.loading = true;
             $http.get( 'http://139.162.71.151:3000/api/search/shop?' + $httpParamSerializer( param )  ).then( function( res ) {
                 console.log( res.data );
+                $scope.loading = false;
+                var exceptList = $scope.except ? $scope.except.split( /\ +/ ) : [];
+                var exceptListLength = exceptList.length;
+                var filterList = res.data.items.filter( function( v ) {
+                    var valid = true;
+                    for ( var i = 0; i < exceptListLength; i += 1 ) {
+                        if ( v && v.title && v.title.indexOf( exceptList[ i ] ) > -1 ) {
+                            valid = false;
+                            break;
+                        }
+                    }
+                    if ( valid ) {
+                        return v;
+                    }
+                } );
+                var lowPrice = {
+                    lprice: null
+                };
+                var highPrice = {
+                    lprice: 0
+                };
+                filterList.forEach( function( v ) {
+                    if( !lowPrice.lprice || v.lprice && ( v.lprice < lowPrice.lprice ) ) {
+                        lowPrice = v;
+                    }
+                    if( v.lprice && ( v.lprice > highPrice.lprice ) ) {
+                        highPrice = v;
+                    }
+                } );
+                $scope.filterList = filterList;
+                $scope.filterCount = filterList.length;
+                $scope.highPrice = highPrice.lprice;
+                $scope.lowPrice = lowPrice.lprice;
+                $scope.result = true;
             }, function( res ) {
                 alert( "실패" );
             } );
         }
 
-
-        $scope.searchWord = "";
+        $scope.result = false;
         $scope.search = search;
 
 
