@@ -71,14 +71,21 @@
                 };
 
                 filterList.forEach( function( v ) {
-                    if( !lowPrice.lprice || v.lprice && ( v.lprice < lowPrice.lprice ) ) {
+                    if( !lowPrice.lprice || v.lprice && +v.lprice > 1000 && ( +v.lprice < +lowPrice.lprice ) ) {
                         lowPrice = v;
+                        console.log( lowPrice );
                     }
-                    if( v.lprice && ( v.lprice > highPrice.lprice ) ) {
+                    if( v.lprice && ( +v.lprice > +highPrice.lprice ) ) {
                         highPrice = v;
                     }
                 } );
 
+                if ( filterList.length > 1000 && res.data.total > 10000 ) {
+                    alert("입력하신 키워드가 너무 다양한 검색 결과를 포함하고 있습니다.\n검색 결과를 좁히기 위해 구체적인 상품 이름을 입력해 주세요.\n예)\n스마트폰(X),\nApple iPhone 7 128GB(O)");
+                } else if ( !filterList.length || !res.data.total ) {
+                    alert( "검색 결과가 없습니다." );
+                    return;
+                }
                 $scope.filterList = filterList;
                 $scope.filterCount = filterList.length;
                 $scope.highPrice = comma.get( highPrice.lprice );
