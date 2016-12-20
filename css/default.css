@@ -42,7 +42,7 @@ mark{font-weight: 700;}
 .panel-body>:first-child{margin-top: 0;}
 .panel-body>:last-child{margin-bottom: 0;}
 .btn{text-decoration: none;}
-.text-center>.btn:only-child{width: 290px;}
+.text-center>.btn:only-child{width: 100%;}
 [class^="bg-"]{padding: 15px;}
 .btn[href^="tg://"]::before{
     content: "";
