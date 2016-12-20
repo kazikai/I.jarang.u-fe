@@ -50,6 +50,14 @@ input[type=radio]{
 /* Bootstrap reset */
 .container{max-width: 750px;}
 .h4{font-weight: 700;}
+.jumbotron{
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.jumbotron>p{font-size: 1.6rem;}
+.jumbotron>:first-child{margin-top: 0;}
+.jumbotron>:last-child{margin-bottom: 0;}
+.jumbotron>p:first-of-type{margin-top: 0;}
 .panel-body>:first-child{margin-top: 0;}
 .panel-body>:last-child{margin-bottom: 0;}
 .btn{text-decoration: none;}
