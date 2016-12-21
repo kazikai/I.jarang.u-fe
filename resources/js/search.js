@@ -87,10 +87,12 @@
                     return;
                 }
                 $scope.filterList = filterList;
-                $scope.filterCount = filterList.length;
-                $scope.highPrice = comma.get( highPrice.lprice );
-                $scope.lowPrice = comma.get( lowPrice.lprice );
+                $scope.filterCount = comma.get( filterList.length );
                 $scope.price = lowPrice.lprice;
+                highPrice.lprice = comma.get( highPrice.lprice );
+                lowPrice.lprice = comma.get( lowPrice.lprice );
+                $scope.highPrice = highPrice;
+                $scope.lowPrice = lowPrice;
                 $scope.result = true;
             }, function( res ) {
                 alert( "실패" );
@@ -104,7 +106,7 @@
                 price: $scope.price
             };
             $http.get( "http://139.162.71.151:3000/subscribe?" + $httpParamSerializer( param ) ).then( function( res ) {
-                alert( "등록 성공" );
+                alert( "등록 성공 텔레그램을 확인해주세요." );
             }, function( res ) {
                 alert( "등록 실패" );
             } );

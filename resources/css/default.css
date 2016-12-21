@@ -65,9 +65,29 @@ input[type=radio]{
 [type=range]{
     padding-left: 0;
     padding-right: 0;
+    -webkit-appearance: none;
+    overflow: hidden;
+    border-radius: 23px;
 }
+[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 46px;
+    width: 46px;
+    background: linear-gradient( 135deg, #ccc, #999);
+    border-radius: 50%;
+    border: 1px solid #999;
+    margin-top: -15px;
+}
+#min-price[type=range]::-webkit-slider-thumb{box-shadow: 623px 0 0 600px #ddd;}
+#max-price[type=range]::-webkit-slider-thumb{box-shadow: -623px 0 0 600px #ddd;}
+[type=range]::-webkit-slider-runnable-track{
+    background: #ddd;
+    height: 16px;
+    border-radius: 8px;
+}
+[type=range]:focus::-webkit-slider-runnable-track{ background: #ccc; }
 [class^="bg-"]{padding: 15px;}
-.btn.telegram-icon::before{
+.btn[href^="tg://"]::before{
     content: "";
     display: inline-block;
     width: 24px;
@@ -93,6 +113,19 @@ input[type=radio]{
     left: 10px;
     top: 8px;
 }
+.media{
+    display: block;
+    clear: both;
+    margin: 0;
+    padding-top: 10px;
+    color: #333;
+}
+.media img{
+    width: 64px;
+    height: 64px;
+}
+.media p{line-height: 1.6rem;}
+.price li:first-child .media{color: #959595;}
 
 /* customized css */
 .range{position: relative;}

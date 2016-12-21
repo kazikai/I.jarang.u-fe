@@ -70,12 +70,31 @@ jsfile:
                     <li class="list-group-item"><label><input type="radio" name="category"> 디지털/가전 &gt; PC액세서리 &gt; 기타PC액세서리</label></li>
                 </ul>
             </section>
+
             <section id="search-result" ng-show="result">
                 <h2 class="h4">가격 확인</h2>
                 <p><mark>{[{maker}]} {[{model}]} {[{version}]} {[{option}]} </mark>상품 <mark>{[{filterCount}]}</mark>개의 가격은</p>
                 <ul class="list-group price">
-                    <li class="list-group-item row"><b class="col-sm-2">최고</b> <strong class="col-sm-10">&#8361; {[{highPrice}]}</strong></li>
-                    <li class="list-group-item row"><b class="col-sm-2">최저</b> <strong class="col-sm-10">&#8361; {[{lowPrice}]}</strong></li>
+                    <li class="list-group-item row">
+                        <b class="col-sm-2">최고</b>
+                        <strong class="col-sm-10">&#8361; {[{highPrice.lprice}]}</strong>
+                        <a href="{[{highPrice.link}]}" target="_blank" class="media">
+                            <div class="media-left">
+                                <img alt class="media-object" ng-src="{[{highPrice.image}]}">
+                            </div>
+                            <p class="media-body">[{[{highPrice.mallName}]}]{[{highPrice.title}]}</p>
+                        </a>
+                    </li>
+                    <li class="list-group-item row">
+                        <b class="col-sm-2">최저</b>
+                        <strong class="col-sm-10">&#8361; {[{lowPrice.lprice}]}</strong>
+                        <a href="{[{lowPrice.link}]}" target="_blank" class="media">
+                            <div class="media-left">
+                                <img alt class="media-object" ng-src="{[{lowPrice.image}]}">
+                            </div>
+                            <p class="media-body">[{[{lowPrice.mallName}]}]{[{lowPrice.title}]}</p>
+                        </a>
+                    </li>
                 </ul>
                 <p>입니다.</p>
                 <p>※ <small>해외직구 상품은 24시간 이내 환율에 따라 원화 가격으로 표시합니다.</small></p>
