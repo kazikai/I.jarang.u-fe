@@ -77,22 +77,22 @@ jsfile:
                 <ul class="list-group price">
                     <li class="list-group-item row">
                         <b class="col-sm-2">최고</b>
-                        <strong class="col-sm-10">&#8361; {[{highPrice.lprice}]}</strong>
+                        <strong class="col-sm-10">&#8361; {[{highPrice.lprice}]}원</strong>
                         <a href="{[{highPrice.link}]}" target="_blank" class="media">
                             <div class="media-left">
                                 <img alt class="media-object" ng-src="{[{highPrice.image}]}">
                             </div>
-                            <p class="media-body">[{[{highPrice.mallName}]}]{[{highPrice.title}]}</p>
+                            <p class="media-body" ng-bind="highPrice.text"></p>
                         </a>
                     </li>
                     <li class="list-group-item row">
                         <b class="col-sm-2">최저</b>
-                        <strong class="col-sm-10">&#8361; {[{lowPrice.lprice}]}</strong>
+                        <strong class="col-sm-10">&#8361; {[{lowPrice.lprice}]}원</strong>
                         <a href="{[{lowPrice.link}]}" target="_blank" class="media">
                             <div class="media-left">
                                 <img alt class="media-object" ng-src="{[{lowPrice.image}]}">
                             </div>
-                            <p class="media-body">[{[{lowPrice.mallName}]}]{[{lowPrice.title}]}</p>
+                            <p class="media-body" ng-bind="highPrice.text"></p>
                         </a>
                     </li>
                 </ul>

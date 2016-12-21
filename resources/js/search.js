@@ -91,6 +91,10 @@
                 $scope.price = lowPrice.lprice;
                 highPrice.lprice = comma.get( highPrice.lprice );
                 lowPrice.lprice = comma.get( lowPrice.lprice );
+                highPrice.text = "[" + highPrice.mallName + "]" + highPrice.title;
+                lowPrice.text = "[" + lowPrice.mallName + "]" + lowPrice.title;
+                highPrice.text = highPrice.text.replace( /<[^>]*>/g, "" );
+                lowPrice.text = lowPrice.text.replace( /<[^>]*>/g, "" );
                 $scope.highPrice = highPrice;
                 $scope.lowPrice = lowPrice;
                 $scope.result = true;
